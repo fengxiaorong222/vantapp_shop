@@ -51,13 +51,7 @@
     </div>
     <div style="height:50px"></div>
     <!-- 底部导航栏 -->
-    <van-tabbar v-model="TabActive">
-      <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item icon="medal-o">专题</van-tabbar-item>
-      <van-tabbar-item icon="apps-o">分类</van-tabbar-item>
-      <van-tabbar-item icon="shopping-cart-o">购物车</van-tabbar-item>
-      <van-tabbar-item icon="user-o">我的</van-tabbar-item>
-    </van-tabbar>
+    <tab-btn></tab-btn>
   </div>
 </template>
 
@@ -65,13 +59,14 @@
 // @ is an alias to /src
 import axios from "axios";
 import api from "../assets/config/api";
+import tabBtn from "../components/tabBtn"
+
 export default {
   name: "home",
   data() {
     return {
       searchData: "",
-      data: {},
-      TabActive: 0,
+      data: {}
     };
   },
   computed: {
@@ -117,12 +112,15 @@ export default {
       }
     },
   },
-
+  components:{
+      tabBtn
+    }
+  ,
   async mounted() {
     let res = await axios.get(api.IndexUrl);
-    console.log(res.data.data);
+    // console.log(res.data.data);
     this.data = res.data.data;
-  },
+  }
 };
 </script>
 
