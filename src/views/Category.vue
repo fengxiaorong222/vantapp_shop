@@ -17,6 +17,7 @@
             :key="item.id"
             :icon="item.wap_banner_url"
             :text="item.name"
+            :to="'/categoryList/'+item.id"  
           />
         </van-grid>
       </template>

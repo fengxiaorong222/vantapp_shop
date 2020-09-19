@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 const Category = () => import('../views/Category')
 const tabBtn = () => import('../components/tabBtn')
+const CategoryList = () => import('../views/categoryList')
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,12 @@ const routes = [
     path: '/category',
     name: 'category',
     component: Category
+  },
+  {
+    path: '/categoryList/:id',
+    name: 'CategoryList',
+    component: CategoryList,
+    props:true
   },
   {
     path: '/tabbtn',

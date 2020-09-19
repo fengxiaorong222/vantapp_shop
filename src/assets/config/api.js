@@ -9,7 +9,7 @@ module.exports = {
 
   GoodsCount: ApiRootUrl + 'goods/count',  //统计商品总数
   GoodsList: ApiRootUrl + 'goods/list',  //获得商品列表
-  //{ brandId: that.data.id, page: that.data.page, size: that.data.size}
+  //{ categoryId: that.data.id, page: that.data.page, size: that.data.size}
   GoodsCategory: ApiRootUrl + 'goods/category',  //获得分类数据
   //request(api.GoodsCategory, { id: this.data.id })
   GoodsDetail: ApiRootUrl + 'goods/detail',  //获得商品的详情
