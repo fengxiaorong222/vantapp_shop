@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 const Category = () => import('../views/Category')
 const tabBtn = () => import('../components/tabBtn')
 const CategoryList = () => import('../views/categoryList')
+const Product = () => import('../views/Product')
 
 Vue.use(VueRouter)
 
@@ -41,6 +42,13 @@ const routes = [
     path: '/tabbtn',
     name: 'tabbtn',
     component: tabBtn
+  }
+  ,
+  {
+    path: '/product/:id',
+    name: 'product',
+    component: Product,
+    props:true
   }
 ]
 

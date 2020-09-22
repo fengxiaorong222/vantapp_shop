@@ -6,7 +6,7 @@
         <p>{{item.front_name}}</p>
 
         <van-grid :border="true" :column-num="2">
-          <van-grid-item  v-for="item in goodsList" :key="item.id">
+          <van-grid-item :to="'/product/'+item.id"  v-for="item in goodsList" :key="item.id">
             <van-image width="100" height="100" :src="item.list_pic_url" />
             <h4 class="van-ellipsis">{{item.name}}</h4>
             <p class="van-ellipsis price">￥{{item.retail_price}}</p>
@@ -46,7 +46,7 @@ export default {
       根据tabActive的改变，请求不同的数据
       */
     tabActive: async function (index) {
-      console.log(index);
+      // console.log(index);
       let categoryId = this.categoryList[index].id;
       let page = 1;
       let size = 20;
@@ -60,7 +60,7 @@ export default {
       let res = await axios.get(api.GoodsList, {
         params: { categoryId: cid, page, size },
       });
-      console.log(res.data.data.data);
+      // console.log(res.data.data.data);
       this.goodsList = res.data.data.data;
     },
   },
