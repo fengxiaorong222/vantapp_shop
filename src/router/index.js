@@ -5,6 +5,7 @@ const Category = () => import('../views/Category')
 const tabBtn = () => import('../components/tabBtn')
 const CategoryList = () => import('../views/categoryList')
 const Product = () => import('../views/Product')
+const Buycart = () => import('../views/buycart')
 
 Vue.use(VueRouter)
 
@@ -49,6 +50,12 @@ const routes = [
     name: 'product',
     component: Product,
     props:true
+  }
+  ,
+  {
+    path: '/buycart',
+    name: 'buycart',
+    component: Buycart
   }
 ]
 
